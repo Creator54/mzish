@@ -19,8 +19,6 @@ function fish_prompt
   printf '%s' (prompt_pwd)
 
   echo
-# set_color -o red
-#printf '└'
   echo && ls -lah |xargs -i echo "  {}" && echo
   set_color -o red
   printf ' :'
@@ -30,9 +28,5 @@ function fish_prompt
     set_color brred
     printf '* '
   end
-# echo && ls -lah |xargs -i echo "  {}"
-#  set_color -o red
-# echo
-#printf ' :'
   set_color normal
 end
