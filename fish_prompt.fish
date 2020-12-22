@@ -6,26 +6,33 @@ end
 
 function fish_prompt
   set_color -o red
-  printf '┌|'
+  printf ' |'
   set_color -o blue
-  printf '%s' (whoami)
+  printf '%s' (hostname|cut -d . -f 1)
   set_color -o red
   printf '|'
   set_color cyan
-  printf '%s ' (hostname|cut -d . -f 1)
+  printf '%s' (whoami)
   set_color $fish_color_autosuggestion[1]
-  printf 'in '
+  printf ' in '
   set_color -o green
   printf '%s' (prompt_pwd)
 
   echo
+# set_color -o red
+#printf '└'
+  echo && ls -lah |xargs -i echo "  {}" && echo
   set_color -o red
-  printf '└─.'
-  set_color yellow
+  printf ' :'
+#set_color -o yellow
   printf '%s' (__fish_git_prompt)
   if [ (_is_git_dirty) ]
-    set_color blue
+    set_color yellow
     printf '* '
   end
+# echo && ls -lah |xargs -i echo "  {}"
+#  set_color -o red
+# echo
+#printf ' :'
   set_color normal
 end
