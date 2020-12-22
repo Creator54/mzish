@@ -24,10 +24,10 @@ function fish_prompt
   echo && ls -lah |xargs -i echo "  {}" && echo
   set_color -o red
   printf ' :'
-#set_color -o yellow
+  set_color -o yellow
   printf '%s' (__fish_git_prompt)
   if [ (_is_git_dirty) ]
-    set_color yellow
+    set_color brred
     printf '* '
   end
 # echo && ls -lah |xargs -i echo "  {}"
