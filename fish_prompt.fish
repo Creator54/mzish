@@ -19,7 +19,9 @@ function fish_prompt
   printf '%s' (prompt_pwd)
 
   echo
-  echo && ls -lah |xargs -i echo "  {}" && echo
+  if test (ls -a |wc -l) -lt 40 
+    echo && ls -lah |xargs -i echo "  {}" && echo
+  end
   set_color -o red
   printf ' :'
   set_color -o yellow
