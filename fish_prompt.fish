@@ -5,25 +5,17 @@ function _is_git_dirty
 end
 
 function fish_prompt
+  echo 
   set_color -o red
-  printf ' |'
-  set_color -o blue
-  printf '%s' (hostname|cut -d . -f 1)
-  set_color -o red
-  printf '|'
-  set_color cyan
-  printf '%s' (whoami)
-  set_color $fish_color_autosuggestion[1]
-  printf ' in '
-  set_color -o green
-  printf '%s' (prompt_pwd)
+  printf ' %s' (prompt_pwd)
 
   echo
+  set_color -o $fish_color_autosuggestion[2]
   if test (ls -a |wc -l) -lt 40 
     echo && ls -lah |xargs -i echo "  {}" && echo
   end
-  set_color -o red
-  printf ' :'
+  set_color -o green
+  printf '%s' ' -> '
   set_color -o yellow
   printf '%s' (__fish_git_prompt)
   if [ (_is_git_dirty) ]
