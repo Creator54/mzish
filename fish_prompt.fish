@@ -15,7 +15,7 @@ function fish_prompt
     echo && ls -lah |xargs -i echo "  {}" && echo
   end
   set_color -o green
-  printf '%s' ' -> '
+  printf '%s' ' |> '
   set_color -o yellow
   printf '%s' (__fish_git_prompt)
   if [ (_is_git_dirty) ]
