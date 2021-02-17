@@ -7,6 +7,6 @@ function fish_right_prompt
   end
   printf '%d' $exit_code
   set_color yellow
-  printf ' | %s' (cat /sys/class/power_supply/BAT0/capacity | tr -d '\n'; echo %) (date +'%a %d'' | '%r'   ')
+  printf '| %s  ' (echo "UP: "|tr -d '\n';uptime | cut -d "," -f1 | cut -d "p" -f2 | sed 's/^ *//g')
   set_color normal
 end

@@ -4,15 +4,14 @@ Based on Zhishen Wen's Zish
 
 ![mzish](./mzish_preview.png)
 
-![mzish_git](./git.png)
-
 ## Left prompt
-User, host, abbreviated path, and git branch info
+abbreviated path, ls -lah, and git branch info 
 
 ## Right prompt
-Exit code,day,date and time
+Exit code, uptime
 
 ## Extras
-runs ls -lah while redrawing the theme
+runs ls -lah if ls|wc -l <=40 while redrawing the theme
+saves typing ls everytime you do cd :P
 
 Enjoy!
