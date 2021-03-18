@@ -12,7 +12,7 @@ function fish_prompt
   set_color -o $fish_color_autosuggestion[2]
   if test (ls -a |wc -l) -lt 40 
 #if test "$argv[1]" = cd
-      echo && ls -lah |xargs -i echo "  {}" && echo
+      echo && printf '  count: %s' (expr (ls -a|wc -l) - 2) && ls -lah |xargs -i echo "  {}" && echo 
 #   end
   end
   set_color -o green
