@@ -5,10 +5,12 @@ function _is_git_dirty
 end
 
 function fish_prompt
+  if test "$argv[1]" = cd
+    clear
+  end
   set_color -o red
-  printf ' %s' (prompt_pwd)
+  printf ' %s ' (prompt_pwd)
 
-  echo
   set_color -o $fish_color_autosuggestion[2]
   if test (ls -a |wc -l) -lt 40 
 #if test "$argv[1]" = cd
@@ -16,7 +18,9 @@ function fish_prompt
 #   end
   end
   set_color -o green
-  printf '%s' ' |>'
+	set symbol      
+	set index (random 1 6)
+  printf '%s' $symbol[$index]
   set_color -o yellow
   printf '%s ' (__fish_git_prompt)
   if [ (_is_git_dirty) ]
