@@ -17,15 +17,20 @@ function fish_prompt
       echo && printf '  count: %s' (expr (ls -a|wc -l) - 2) && ls -lah |xargs -i echo "  {}" && echo 
 #   end
   end
-  set_color -o green
-	set symbol      
-	set index (random 1 6)
-  printf '%s' $symbol[$index]
+  #set_color -o green
+	#set symbol      
+	#set index (random 1 6)
+  #printf '%s' $symbol[$index]
   set_color -o yellow
-  printf '%s ' (__fish_git_prompt)
+  printf '%s' (__fish_git_prompt)
   if [ (_is_git_dirty) ]
     set_color brred
     printf '* '
   end
+  set_color -o green
+	set symbol      
+	set index (random 1 6)
+  printf '%s  ' $symbol[$index]
+
   set_color normal
 end
