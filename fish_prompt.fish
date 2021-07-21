@@ -8,8 +8,6 @@ function fish_prompt
   if test "$argv[1]" = cd
     clear
   end
-  set_color -o red
-  printf ' %s ' (prompt_pwd)
 
   set_color -o $fish_color_autosuggestion[2]
   if test (ls -a |wc -l) -lt 40 
@@ -30,6 +28,10 @@ function fish_prompt
   set_color -o green
 	set symbol      
 	set index (random 1 6)
+	set_color -o red
+  printf ' %s ' (prompt_pwd)
+	set_color -o green
+	#printf '  '
   printf '%s  ' $symbol[$index]
 
   set_color normal
