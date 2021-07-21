@@ -11,8 +11,12 @@ abbreviated path, ls -lah, and git branch info & a random chess-piece  ,cuz y no
 Exit code, uptime
 
 ## Extras
-run `set dols 'false' ` if you want to remove ls-lah & uptime for the session.
+
 runs ls -lah if ls|wc -l <=40 while redrawing the theme
 saves typing ls everytime you do cd :P
+
+## Session-wide config
+* run `set doclr 'true'` for running `clear` at each repaint.         
+* run `set dols 'false'` to remove ls-lah & uptime                              
 
 Enjoy!
