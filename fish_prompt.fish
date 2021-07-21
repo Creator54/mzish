@@ -1,4 +1,6 @@
-# based on Zish
+# MZish
+
+set -gx dols 'true'
 
 function _is_git_dirty
   echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
@@ -10,15 +12,9 @@ function fish_prompt
   end
 
   set_color -o $fish_color_autosuggestion[2]
-  if test (ls -a |wc -l) -lt 40 
-#if test "$argv[1]" = cd
+  if test (ls -a |wc -l) -lt 40 && [ "$dols" = "true" ]
       echo && printf '  count: %s' (expr (ls -a|wc -l) - 2) && ls -lah |xargs -i echo "  {}" && echo 
-#   end
   end
-  #set_color -o green
-	#set symbol      
-	#set index (random 1 6)
-  #printf '%s' $symbol[$index]
   set_color -o yellow
   printf '%s' (__fish_git_prompt)
   if [ (_is_git_dirty) ]

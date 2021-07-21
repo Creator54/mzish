@@ -1,6 +1,6 @@
 # MZish
 
-Based on Zhishen Wen's Zish
+A Fish-Shell Theme
 
 ![mzish](./mzish_preview.png)
 
@@ -11,6 +11,7 @@ abbreviated path, ls -lah, and git branch info & a random chess-piece  ,cuz y no
 Exit code, uptime
 
 ## Extras
+run `set dols 'false' ` if you want to remove ls-lah & uptime for the session.
 runs ls -lah if ls|wc -l <=40 while redrawing the theme
 saves typing ls everytime you do cd :P
 
