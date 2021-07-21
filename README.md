@@ -5,7 +5,7 @@ Based on Zhishen Wen's Zish
 ![mzish](./mzish_preview.png)
 
 ## Left prompt
-abbreviated path, ls -lah, and git branch info & a random   ,cuz y not 
+abbreviated path, ls -lah, and git branch info & a random chess-piece  ,cuz y not 
 
 ## Right prompt
 Exit code, uptime
