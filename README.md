@@ -17,6 +17,6 @@ saves typing ls everytime you do cd :P
 
 ## Session-wide config
 * run `set doclr 'true'` for running `clear` at each repaint.         
-* run `set dols 'false'` to remove ls-lah & uptime                              
+* run `set dols 'false'` to remove `ls-lah` & `uptime`                           
 
 Enjoy!
