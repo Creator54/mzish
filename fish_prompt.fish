@@ -1,14 +1,14 @@
-# MZish
+# MZish 2.0
 
 set -gx dols 'true'
-set -gx doclr 'false'
+set -gx docls 'false'
 
 function _is_git_dirty
   echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
 end
 
 function fish_prompt
-  if [ "$doclr" = "true" ]
+  if [ "$docls" = "true" ]
     clear
   end
 
