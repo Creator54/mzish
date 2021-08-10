@@ -1,6 +1,5 @@
 # MZish 2.0
 
-set -gx dols 'true'
 set -gx docls 'false'
 
 function _is_git_dirty
@@ -10,6 +9,12 @@ end
 function fish_prompt
   if [ "$docls" = "true" ]
     clear
+  end
+	
+	if [ $COLUMNS -lt 57 ]
+		set -gx dols 'false'
+	else
+		set -gx dols 'true'
   end
 
   set_color -o $fish_color_autosuggestion[2]
