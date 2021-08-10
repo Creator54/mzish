@@ -11,7 +11,7 @@ function fish_prompt
     clear
   end
 	
-	if [ $COLUMNS -lt 57 ]
+	if [ $COLUMNS -lt 57 ]; or [ $LINES -lt 30 ]
 		set -gx dols 'false'
 	else
 		set -gx dols 'true'
