@@ -18,7 +18,7 @@ runs ls -lah while redrawing the theme
 * Window $LINES > 30
 
 Note: $COLUMNS & $LINES variables are set by terminal(kitty user here). if not
-then set them as global variable in you fish.config.
+then set them as global variable in your fish.config.
 
 saves typing ls everytime you do cd :P
 
