@@ -19,7 +19,7 @@ function fish_prompt
 
   set_color -o $fish_color_autosuggestion[2]
   if test (ls -a |wc -l) -lt 40 && [ "$dols" = "true" ]
-      echo && printf '  count: %s' (expr (ls -a|wc -l) - 2) && ls -lah |xargs -i echo "  {}" && echo 
+		tree -h -L 1 && echo
   end
   set_color -o yellow
   printf '%s' (__fish_git_prompt)
