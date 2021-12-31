@@ -10,7 +10,7 @@ function fish_prompt
   if [ "$docls" = "true" ]
     clear
   end
-	
+
 	if [ $COLUMNS -lt 57 ]; or [ $LINES -lt 30 ]
 		set -gx dols 'false'
 	else
@@ -18,7 +18,7 @@ function fish_prompt
   end
 
   set_color -o $fish_color_autosuggestion[2]
-  if test (ls -a |wc -l) -lt 40 && [ "$dols" = "true" ]
+  if test (ls -a |wc -l) -lt 40 && [ "$dols" = "true" ] && [ "$status" = "0" ]
 		tree -h -L 1 && echo
   end
   set_color -o yellow
