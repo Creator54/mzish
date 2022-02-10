@@ -17,9 +17,9 @@ function fish_prompt
 		set -gx dols 'true'
   end
 
-  set_color -o $fish_color_autosuggestion[2]
-  if test (ls -a |wc -l) -lt 40 && [ "$dols" = "true" ] && [ "$status" = "0" ]
-		tree -h -L 1 && echo
+  set_color -o $fish_color_autosuggestion[2] #$status gets the status of this line,or the line above ig need to get of term cmd
+  if [ $status = 0 ] && test (ls -a |wc -l) -lt 40 && [ "$dols" = "true" ]
+		ls -lh && echo
   end
   set_color -o yellow
   printf '%s' (__fish_git_prompt)
